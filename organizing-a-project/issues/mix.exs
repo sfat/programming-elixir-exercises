@@ -10,6 +10,13 @@ defmodule Issues.MixProject do
       source_url: "https://github.com/sfat/programming-elixir/issues",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ],
       deps: deps()
     ]
   end
@@ -27,7 +34,8 @@ defmodule Issues.MixProject do
       {:httpoison, "~> 1.0.0"},
       {:poison, "~> 3.1"},
       {:ex_doc, "~> 0.19.3"},
-      {:earmark, "~> 1.2.4"}
+      {:earmark, "~> 1.2.4", override: true},
+      {:excoveralls, "~> 0.5.5", only: :test}
     ]
   end
   
