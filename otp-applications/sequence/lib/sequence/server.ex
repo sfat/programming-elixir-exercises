@@ -29,7 +29,7 @@ defmodule Sequence.Server do
   # GenServer implementation
   
   def init(_) do
-    state = %State{current_number: Sequence.Stash.get()}
+    state = Sequence.Stash.get()
     {:ok, state}
   end
   
@@ -41,8 +41,8 @@ defmodule Sequence.Server do
     {:noreply, %{state | delta: delta}}
   end
   
-  def terminate(_reason, current_number) do
-    Sequence.Stash.update(current_number)
+  def terminate(_reason, state) do
+    Sequence.Stash.update(state)
   end
   
   def code_change("0", old_state = current_number, _extra) do

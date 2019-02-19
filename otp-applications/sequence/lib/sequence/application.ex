@@ -8,7 +8,7 @@ defmodule Sequence.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-      {Sequence.Stash, Application.get_env(:sequence, :initial_number)},
+      {Sequence.Stash, Application.get_env(:sequence, :initial_state)},
       {Sequence.Server, nil},
     ]
     
