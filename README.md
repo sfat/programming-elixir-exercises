@@ -1,4 +1,4 @@
-# programming-elixir-exercises
+# Programming Elixir >= 1.6 Exercises
 Examples and exercises from [Programming Elixir >= 1.6](https://pragprog.com/book/elixir16/programming-elixir-1-6) while reading the book
 
 Table of contents
